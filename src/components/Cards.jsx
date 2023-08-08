@@ -2,9 +2,12 @@ import React from 'react'
 import Card from './Card'
 
 function Cards({ movies }) {
+  
+  
+
   return (
     <div>
-        {movies.map((item, index) => (
+        {movies?.map((item) => (
           <Card key={item.id} movie={item} />
         ))}
     </div>

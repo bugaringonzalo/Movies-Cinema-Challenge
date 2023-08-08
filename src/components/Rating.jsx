@@ -3,17 +3,23 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 
 
-function Rating() {
+function Rating({ratingOrigin, changeRating}) {
 
   const [rating, setRating] = useState(0)
 
   const handleClick = (value) => {
     setRating(value)
+    changeRating(value*2)
+  }
+
+  const addRatingOrigin = () => {
+    let result = Math.floor(ratingOrigin/2)
+    setRating(result)
   }
   
   useEffect(() => {
-    setRating(rating)
-  }, [rating])
+    addRatingOrigin(rating)
+  }, [])
 
 
   return (
